@@ -1256,14 +1256,12 @@ app.get("/api/taixiumd5/lc79", async () => {
 
     if (!lastResult || !currentPrediction) {
         return {
-            id: "GiaThinhzZz Lc79",
             phien_truoc: null,
             xuc_xac1: null,
             xuc_xac2: null,
             xuc_xac3: null,
             tong: null,
             ket_qua: "đang chờ...",
-            pattern: "đang phân tích...",
             phien_hien_tai: null,
             du_doan: "chưa có",
             do_tin_cay: "0%"
@@ -1271,14 +1269,12 @@ app.get("/api/taixiumd5/lc79", async () => {
     }
 
     return {
-        id: "GiaThinhzZz Lc79",
         phien_truoc: lastResult.session,
         xuc_xac1: lastResult.dice[0],
         xuc_xac2: lastResult.dice[1],
         xuc_xac3: lastResult.dice[2],
         tong: lastResult.total,
         ket_qua: lastResult.result.toLowerCase(),
-        pattern: pattern,
         phien_hien_tai: lastResult.session + 1,
         du_doan: currentPrediction.prediction,
         do_tin_cay: `${(currentPrediction.confidence * 100).toFixed(0)}%`
